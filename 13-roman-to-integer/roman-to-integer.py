@@ -11,13 +11,12 @@ class Solution:
             "M" : 1000
         }
 
-        result = roman[s[0]]
+        result = 0
         
-        for i in range(1,len(s)):
-            if roman[s[i]] <= roman[s[i-1]]:
+        for i in range(len(s)):
+            if i+1 < len(s) and roman[s[i]] < roman[s[i+1]]:
+                result -= roman[s[i]]
+            else:
                 result += roman[s[i]]
-
-            if roman[s[i]] > roman[s[i-1]]:
-                result = result - (2 * roman[s[i-1]]) + roman[s[i]]
 
         return result
