@@ -5,10 +5,14 @@ class Solution(object):
         :rtype: bool
         """
 
+        chars = []
+
         alphanum = ""
         for char in s:
             if char.isalnum():
-                alphanum = alphanum + char
+                chars.append(char)
+    
+        alphanum = "".join(chars)
 
         alphanum = alphanum.lower()
         left = 0
