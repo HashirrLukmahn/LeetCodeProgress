@@ -10,9 +10,6 @@ class Solution:
         wordStore = s.split()
         
         for word in reversed(wordStore):
-            if word == " ":
-                wordStore.pop(word)
-            else:
                 result += word + " "
 
 
