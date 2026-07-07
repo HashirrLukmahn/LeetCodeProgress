@@ -8,12 +8,13 @@ class Solution:
             return False
 
         for i in range(n):
-            lowest = min(nums[i],lowest)
-            if nums[i] > lowest and nums[i] <= mid:
-                mid = nums[i]
-
-            if nums[i] > lowest and nums[i] > mid:
+            
+            if nums[i] <= lowest:
+                lowest = nums[i]            
+            elif nums[i] > lowest and nums[i] > mid:
                 return True
+            else:
+                mid = nums[i]
 
         return False
 
